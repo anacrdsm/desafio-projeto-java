@@ -26,19 +26,26 @@ public class ContaTerminal {
         
         System.out.println("Olá " + nome + " obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numeroConta + " e seu saldo " + saldo + " já está disponível para saque.");
 
-
         DepositoSaque depositoSaque = new DepositoSaque();
-            System.out.println("Para depósitos, digite aqui o novo valor:");
+        System.out.println("O que vamos fazer agora? Para depósitos, digite 1; para saques, digite 2.");
+        int escolhaUsuario = scanner.nextInt();
+        if(escolhaUsuario == 1){
+            System.out.println("Digite aqui um valor para depósito:");
             double deposito = scanner.nextDouble();
             scanner.nextLine();
             saldo = depositoSaque.depositarValor(deposito, saldo);
-            System.out.println("Legal. O novo valor da sua conta é " + saldo);
-            
-            System.out.println("Caso queira sacar, digite aqui um valor:");
+            System.out.println("Legal. O novo valor da sua conta é " + saldo);   
+        }
+        else if(escolhaUsuario == 2){
+            System.out.println("Digite aqui um valor para saque:");
             double saque = scanner.nextDouble();
             scanner.nextLine();
             saldo = depositoSaque.sacarValor(saque, saldo);
             System.out.println("Legal! Você sacou " + saque + " restando na sua conta " + saldo);
+        }
+        else{
+            System.out.println("A opção digitada não é válida.");
+        }
 
         scanner.close(); 
     }
