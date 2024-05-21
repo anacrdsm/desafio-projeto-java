@@ -34,6 +34,12 @@ public class ContaTerminal {
             saldo = depositoSaque.depositarValor(deposito, saldo);
             System.out.println("Legal. O novo valor da sua conta é " + saldo);
             
+            System.out.println("Caso queira sacar, digite aqui um valor:");
+            double saque = scanner.nextDouble();
+            scanner.nextLine();
+            saldo = depositoSaque.sacarValor(saque, saldo);
+            System.out.println("Legal! Você sacou " + saque + " restando na sua conta " + saldo);
+
         scanner.close(); 
     }
 }
