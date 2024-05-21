@@ -26,6 +26,14 @@ public class ContaTerminal {
         
         System.out.println("Olá " + nome + " obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numeroConta + " e seu saldo " + saldo + " já está disponível para saque.");
 
+
+        DepositoSaque depositoSaque = new DepositoSaque();
+            System.out.println("Para depósitos, digite aqui o novo valor:");
+            double deposito = scanner.nextDouble();
+            scanner.nextLine();
+            saldo = depositoSaque.depositarValor(deposito, saldo);
+            System.out.println("Legal. O novo valor da sua conta é " + saldo);
+            
         scanner.close(); 
     }
 }
